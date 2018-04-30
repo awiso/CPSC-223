@@ -1,0 +1,27 @@
+8.1 Assignment 1, due Thursday 2018-02-08, at 11:00pm
+8.1.1 Bureaucratic part.
+Make sure that you sign up for an account on the Zoo at http://zoo.cs.yale.edu/accounts.html. If you already have an account, you still need to check the CPSC 223 box so that you can turn in assignments. It's best to do this as soon as possible.
+
+You do not need to develop your solution on the Zoo, but you will need to turn it in there, and it will be tested using the compiler on the Zoo.
+
+8.1.2 Pig Esperanto
+For this assignment, you are to implement an encoder for Pig Esperanto, a simplified version of the language game Pig Elvish, which in turn is similar to Pig Latin.
+
+Pig Esperanto works by translating a text one word at a time. For the purposes of this assignment, a word consists of a consecutive sequence of characters for which isalpha, defined in the include file  ctype.h, returns true. Any characters for which isalpha returns false should be passed through unmodified.
+
+For each input word:
+
+Move the first letter to the end.
+Add the letters "an" to the end of any word of three letters or less, and "o" to the end of any longer word.
+Make the new first letter of the word match the case of the old first letter of the word. Make the letter that was moved lowercase if it is not still the first letter. Do not change the capitalization of any other letters.
+Capitalization can be tested using the isupper and islower macros, and modified using the  toupper and tolower macros. Like isalpha, these are all defined in ctype.h.
+
+8.1.3 Your task
+You are to write a program encode.c that takes an input from stdin, encodes it using the above rules, and writes the result to stdout.
+
+For example, given the input
+
+I *REALLY* like Yale's course-selection procedures.
+Your program should output
+
+Ian *EALLYro* ikelo Aleyo'san ourseco-electionso rocedurespo.
